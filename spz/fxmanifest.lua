@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'ESX Vehicle Plate Script using OX Libraries'
-author 'YourName'
+description 'ESX Vehicle Plate Script using OX Lib'
+author 'Pitrs'
 version '1.0.0'
 
 lua54 'yes'
