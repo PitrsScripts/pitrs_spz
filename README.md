@@ -27,3 +27,11 @@ fivem script for taking off / putting on plate, uses ox_inventory for item and o
 * ox_inventory
 * ox_target
 
+### 📦 Resource Info
+
+|||
+| --- | --- |
+|**Code is accessible**|Yes|
+|**Subscription-based**|No|
+|**Lines (approximately)**|~263|
+|**Support**|Yes|
