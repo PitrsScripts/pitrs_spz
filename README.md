@@ -7,7 +7,7 @@ fivem script for taking off / putting on plate, uses ox_inventory for item and o
 
 **Instalation**
 
-*Go to ox_inventory/data/items.lua place item
+* Go to ox_inventory/data/items.lua place item
 
 ```
 ['vehicle_plate'] = {
