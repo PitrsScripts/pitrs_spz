@@ -1,5 +1,8 @@
 # pitrs_spz
 
+# INSTALATION 
+
+Go to ox_inventory/data/items.lua place item
 
 ```
 ['vehicle_plate'] = {
