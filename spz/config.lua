@@ -1,7 +1,7 @@
 Config = {}
 
-Config.RemovePlateTime = 5000 -- Time in ms for removing plate
-Config.AttachPlateTime = 5000 -- Time in ms for attaching plate
+Config.RemovePlateTime = 15000 -- Time in ms for removing plate
+Config.AttachPlateTime = 15000 -- Time in ms for attaching plate
 Config.PlateItem = 'vehicle_plate' -- Item name for the plate in ox_inventory
 Config.RequireItem = 'sroubovak' -- Item required to remove the plate
 Config.RequireItemRequired = true -- Whether the player needs the item to remove the plate (true/false)

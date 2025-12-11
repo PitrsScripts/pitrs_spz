@@ -19,22 +19,15 @@ ESX.RegisterServerCallback('spz:checkVehicleOwner', function(source, cb, plate)
 end)
 
 -- Check if player has plate item
-ESX.RegisterServerCallback('spz:hasPlateItem', function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    if not xPlayer then
-        return cb(false, nil)
-    end
+lib.callback.register('spz:hasPlateItem', function(source)
     local items = ox_inventory:Search(source, 'slots', Config.PlateItem)
     if items and #items > 0 then
         local item = items[1]
         if item.count > 0 and item.metadata and item.metadata.plate then
-            cb(true, item.metadata.plate)
-        else
-            cb(false, nil)
+            return true, item.metadata.plate
         end
-    else
-        cb(false, nil)
     end
+    return false, nil
 end)
 
 -- Remove plate and add item to inventory
@@ -75,23 +68,17 @@ AddEventHandler('spz:removePlate', function(plate)
 end)
 
 -- Check if player has required item (new callback)
-ESX.RegisterServerCallback('spz:hasRequiredItem', function(source, cb)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    if not xPlayer then
-        return cb(false)
-    end
+lib.callback.register('spz:hasRequiredItem', function(source)
     local requiredItem = Config.RequireItem
     local items = ox_inventory:Search(source, 'slots', requiredItem)
-    local hasRequiredItem = false
     if items and #items > 0 then
         for _, item in pairs(items) do
             if item.count > 0 then
-                hasRequiredItem = true
-                break
+                return true
             end
         end
     end
-    cb(hasRequiredItem)
+    return false
 end)
 
 -- Attach plate and remove item

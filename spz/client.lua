@@ -140,7 +140,14 @@ ox_target:addGlobalVehicle({
                     return false
                 end
                 local plate = GetVehicleNumberPlateText(vehicle)
-                return plate and not plate:match('^%s*$')
+                if not plate or plate:match('^%s*$') then
+                    return false
+                end
+                if Config.RequireItemRequired then
+                    local hasItem = lib.callback.await('spz:hasRequiredItem', false)
+                    return hasItem
+                end
+                return true
             end
             return false
         end,
@@ -160,7 +167,11 @@ ox_target:addGlobalVehicle({
                     return false
                 end
                 local plate = GetVehicleNumberPlateText(vehicle)
-                return plate and plate:match('^%s*$')
+                if not plate or not plate:match('^%s*$') then
+                    return false
+                end
+                local hasItem = lib.callback.await('spz:hasPlateItem', false)
+                return hasItem
             end
             return false
         end,
