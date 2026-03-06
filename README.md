@@ -4,6 +4,7 @@
 
 fivem script for taking off / putting on plate, uses ox_inventory for item and ox_target for car interaction
 
+https://www.youtube.com/watch?v=qgYA_YnT9So
 
 **Instalation**
 
